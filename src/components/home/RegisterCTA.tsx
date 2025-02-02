@@ -14,7 +14,7 @@ function RegisterCTA() {
                     Join thousands of teams already using KanbanFlow
                 </p>
                 <motion.div>
-                    <Button size='lg' className='gap-2 group'>
+                    <Button size='lg' className='gap-2'>
                         Register Now
                         <ArrowRight className='h-5 w-5 transform transition-transform group-hover:translate-x-2' />
                     </Button>

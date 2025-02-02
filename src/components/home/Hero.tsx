@@ -4,7 +4,7 @@ import { motion } from 'framer-motion';
 
 function Hero() {
     return (
-        <main className='container mx-auto flex-1 px-4'>
+        <div className='container mx-auto flex-1 px-4'>
             <div className='my-20 grid gap-12 md:grid-cols-2 md:gap-8 lg:gap-12'>
                 <motion.div
                     className='flex flex-col justify-center space-y-8'
@@ -76,7 +76,7 @@ function Hero() {
                     </div>
                 </motion.div>
             </div>
-        </main>
+        </div>
     );
 }
 

@@ -1,7 +1,9 @@
 import { Layout } from 'lucide-react';
 import { Button } from '../ui/button';
+import { useNavigate } from 'react-router-dom';
 
 function Header() {
+    const navigate = useNavigate();
     const buttonClass = 'text-white hover:text-black/90';
 
     return (
@@ -13,7 +15,11 @@ function Header() {
             </div>
 
             <div className='flex items-center gap-4'>
-                <Button variant='ghost' className={buttonClass}>
+                <Button
+                    variant='ghost'
+                    className={buttonClass}
+                    onClick={() => navigate('/login')}
+                >
                     Login
                 </Button>
 
