@@ -3,6 +3,7 @@ import Home from './pages/Home';
 import Footer from './components/layout/Footer';
 import { Routes, Route } from 'react-router-dom';
 import LoginPage from './pages/Login';
+import ForgotPassword from './pages/ForgotPassword';
 
 function Layout({ children }: { children: React.ReactNode }) {
     return (
@@ -27,6 +28,7 @@ function App() {
                     }
                 />
                 <Route path='/login' element={<LoginPage />} />
+                <Route path='/forgot-password' element={<ForgotPassword />} />
             </Routes>
         </div>
     );
