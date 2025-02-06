@@ -4,6 +4,7 @@ import Footer from './components/layout/Footer';
 import { Routes, Route } from 'react-router-dom';
 import LoginPage from './pages/Login';
 import ForgotPassword from './pages/ForgotPassword';
+import Register from './pages/Register';
 
 function Layout({ children }: { children: React.ReactNode }) {
     return (
@@ -29,6 +30,7 @@ function App() {
                 />
                 <Route path='/login' element={<LoginPage />} />
                 <Route path='/forgot-password' element={<ForgotPassword />} />
+                <Route path='/register' element={<Register />} />
             </Routes>
         </div>
     );
