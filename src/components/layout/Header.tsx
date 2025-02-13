@@ -23,7 +23,11 @@ function Header() {
                     Login
                 </Button>
 
-                <Button variant='ghost' className={buttonClass}>
+                <Button
+                    variant='ghost'
+                    className={buttonClass}
+                    onClick={() => navigate('/register')}
+                >
                     Get Started
                 </Button>
             </div>

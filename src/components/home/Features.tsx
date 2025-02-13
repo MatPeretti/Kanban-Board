@@ -39,7 +39,9 @@ function Features() {
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ delay: i * 0.2 }}
                     >
-                        <feature.icon className='mb-4 h-12 w-12 text-primary' />
+                        {feature.icon && (
+                            <feature.icon className='mb-4 h-12 w-12 text-primary' />
+                        )}
 
                         <h3 className='mb-2 text-xl font-semibold'>
                             {feature.title}

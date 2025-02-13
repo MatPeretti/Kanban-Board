@@ -1,8 +1,11 @@
 import { motion } from 'framer-motion';
 import { Button } from '../ui/button';
 import { ArrowRight } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
 
 function RegisterCTA() {
+    const navigate = useNavigate();
+
     return (
         <section className='my-20'>
             <div className='rounded-lg p-8 text-center'>
@@ -14,7 +17,11 @@ function RegisterCTA() {
                     Join thousands of teams already using KanbanFlow
                 </p>
                 <motion.div>
-                    <Button size='lg' className='gap-2 group'>
+                    <Button
+                        size='lg'
+                        className='gap-2 group'
+                        onClick={() => navigate('/register')}
+                    >
                         Register Now
                         <ArrowRight className='h-5 w-5 transform transition-transform group-hover:translate-x-2' />
                     </Button>
