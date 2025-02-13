@@ -61,20 +61,20 @@ function Hero() {
                     animate={{ opacity: 1 }}
                     transition={{ duration: 0.5, delay: 0.2 }}
                 >
-                    <div className='aspect-video overflow-hidden rounded-lg bg-gradient-to-br from-purple-500 to-blue-600 shadow-2xl'>
-                        <div className='grid h-full grid-cols-3 gap-4 p-6'>
+                    <div className='h-[300px] sm:h-[240px] md:h-[280px] lg:h-auto lg:aspect-video overflow-hidden rounded-lg bg-gradient-to-br from-purple-500 to-blue-600 shadow-2xl'>
+                        <div className='grid h-full grid-cols-3 gap-3 p-4 sm:gap-2 sm:p-3 md:gap-3 md:p-4 lg:gap-4 lg:p-6'>
                             {Array.from({ length: 3 }).map((_, i) => (
                                 <div
                                     key={i}
-                                    className='rounded-lg bg-white/10 p-4'
+                                    className='rounded-lg bg-white/10 p-3 sm:p-2 md:p-3 lg:p-4'
                                 >
-                                    <div className='mb-4 h-3 w-20 rounded bg-white/20' />
+                                    <div className='mb-3 sm:mb-2 md:mb-3 lg:mb-4 h-2 sm:h-1.5 md:h-2 lg:h-3 w-16 sm:w-10 md:w-12 lg:w-20 rounded bg-white/20' />
                                     {Array.from({ length: 3 }).map((_, j) => (
                                         <div
                                             key={j}
-                                            className='mb-2 rounded bg-white/5 p-3'
+                                            className='mb-2 sm:mb-1 md:mb-2 rounded bg-white/5 p-2 sm:p-1.5 md:p-2 lg:p-3'
                                         >
-                                            <div className='h-2 w-full rounded bg-white/20' />
+                                            <div className='h-1.5 sm:h-1 md:h-1.5 lg:h-2 w-full rounded bg-white/20' />
                                         </div>
                                     ))}
                                 </div>
