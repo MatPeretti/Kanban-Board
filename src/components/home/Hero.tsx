@@ -1,8 +1,11 @@
 import { ArrowRight } from 'lucide-react';
 import { Button } from '../ui/button';
 import { motion } from 'framer-motion';
+import { useNavigate } from 'react-router-dom';
 
 function Hero() {
+    const navigate = useNavigate();
+
     return (
         <div className='container mx-auto flex-1 px-4'>
             <div className='my-20 grid gap-12 md:grid-cols-2 md:gap-8 lg:gap-12'>
@@ -32,7 +35,11 @@ function Hero() {
                     </motion.p>
 
                     <div className='flex flex-col gap-4 sm:flex-row'>
-                        <Button size='lg' className='gap-2 group'>
+                        <Button
+                            size='lg'
+                            className='gap-2 group'
+                            onClick={() => navigate('/start-free-trial')}
+                        >
                             Start Free Trial
                             <ArrowRight className='h-5 w-5 transform transition-transform group-hover:translate-x-2' />
                         </Button>
