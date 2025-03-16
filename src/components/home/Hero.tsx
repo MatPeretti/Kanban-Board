@@ -2,8 +2,9 @@ import { ArrowRight } from 'lucide-react';
 import { Button } from '../ui/button';
 import { motion } from 'framer-motion';
 import { useNavigate } from 'react-router-dom';
+import { HeroProps } from 'src/types/hero';
 
-function Hero() {
+function Hero({ scrollToFeatures }: HeroProps) {
     const navigate = useNavigate();
 
     return (
@@ -49,6 +50,7 @@ function Hero() {
                             className={
                                 'gap-2 group text-black border-gray-500 bg-white hover:bg-gray-400 hover:border-gray-400 transition-all duration-300 ease-in-out'
                             }
+                            onClick={scrollToFeatures}
                         >
                             Learn More
                         </Button>
