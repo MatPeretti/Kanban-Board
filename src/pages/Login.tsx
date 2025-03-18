@@ -28,7 +28,7 @@ export default function Login() {
             formData.email === 'test@example.com' &&
             formData.password === 'password'
         ) {
-            navigate('/dashboard');
+            navigate('/board');
         } else {
             setError('Invalid email or password');
         }

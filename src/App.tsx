@@ -6,6 +6,7 @@ import LoginPage from './pages/Login';
 import ForgotPassword from './pages/ForgotPassword';
 import Register from './pages/Register';
 import StartFreeTrial from './pages/StartFreeTrial';
+import Board from './pages/Board';
 
 function Layout({ children }: { children: React.ReactNode }) {
     return (
@@ -33,6 +34,7 @@ function App() {
                 <Route path='/forgot-password' element={<ForgotPassword />} />
                 <Route path='/register' element={<Register />} />
                 <Route path='/start-free-trial' element={<StartFreeTrial />} />
+                <Route path='/board' element={<Board />} />
             </Routes>
         </div>
     );
