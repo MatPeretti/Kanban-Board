@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import {
     LayoutDashboard,
     ListTodo,
@@ -34,6 +35,7 @@ export function KanbanSidebar({ isOpen }: KanbanSidebarProps) {
     ]);
     const [selectedWorkspace, setSelectedWorkspace] = useState(workspaces[0]);
     const [isWorkspaceDialogOpen, setIsWorkspaceDialogOpen] = useState(false);
+    const navigate = useNavigate();
 
     const handleCreateWorkspace = (workspaceName: string) => {
         const newWorkspace: Workspace = {
@@ -133,7 +135,10 @@ export function KanbanSidebar({ isOpen }: KanbanSidebarProps) {
                                     isOpen ? 'px-3' : 'px-0 justify-center',
                                     activeItem === item.id && 'bg-gray-700'
                                 )}
-                                onClick={() => setActiveItem(item.id)}
+                                onClick={() => {
+                                    setActiveItem(item.id);
+                                    navigate(`/${item.id}`);
+                                }}
                             >
                                 <item.icon
                                     className={cn(

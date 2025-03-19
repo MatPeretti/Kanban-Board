@@ -7,6 +7,8 @@ import ForgotPassword from './pages/ForgotPassword';
 import Register from './pages/Register';
 import StartFreeTrial from './pages/StartFreeTrial';
 import Board from './pages/Board';
+import { Tasks } from './pages/Tasks';
+import { useKanbanBoard } from './hooks/useKanbanBoard';
 
 function Layout({ children }: { children: React.ReactNode }) {
     return (
@@ -19,6 +21,9 @@ function Layout({ children }: { children: React.ReactNode }) {
 }
 
 function App() {
+    const { columns } = useKanbanBoard();
+    const allTasks = columns.flatMap((column) => column.tasks);
+
     return (
         <div className='flex min-h-screen flex-col bg-gradient-to-b from-gray-900 to-black text-white'>
             <Routes>
@@ -35,6 +40,7 @@ function App() {
                 <Route path='/register' element={<Register />} />
                 <Route path='/start-free-trial' element={<StartFreeTrial />} />
                 <Route path='/board' element={<Board />} />
+                <Route path='/tasks' element={<Tasks tasks={allTasks} />} />
             </Routes>
         </div>
     );
