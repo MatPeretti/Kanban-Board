@@ -9,6 +9,7 @@ import StartFreeTrial from './pages/StartFreeTrial';
 import Board from './pages/Board';
 import { Tasks } from './pages/Tasks';
 import { useKanbanBoard } from './hooks/useKanbanBoard';
+import { SidebarLayoutWithProvider } from './components/layout/SidebarLayout';
 
 function Layout({ children }: { children: React.ReactNode }) {
     return (
@@ -39,8 +40,11 @@ function App() {
                 <Route path='/forgot-password' element={<ForgotPassword />} />
                 <Route path='/register' element={<Register />} />
                 <Route path='/start-free-trial' element={<StartFreeTrial />} />
-                <Route path='/board' element={<Board />} />
-                <Route path='/tasks' element={<Tasks tasks={allTasks} />} />
+
+                <Route element={<SidebarLayoutWithProvider />}>
+                    <Route path='/board' element={<Board />} />
+                    <Route path='/tasks' element={<Tasks tasks={allTasks} />} />
+                </Route>
             </Routes>
         </div>
     );
