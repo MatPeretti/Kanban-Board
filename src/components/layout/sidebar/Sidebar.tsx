@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import {
     LayoutDashboard,
@@ -10,14 +10,20 @@ import {
 } from 'lucide-react';
 import { useSidebar } from '@/context/SidebarContext';
 import { cn } from '@/lib/utils';
-import { WorkspaceSelector } from './Workspaceselector';
-import { NavigationMenu } from './Navigationmenu';
 import { UserProfile } from './UserProfile';
+import { WorkspaceSelector } from './WorkspaceSelector';
+import { NavigationMenu } from './NavigationMenu';
+import { useLocation } from 'react-router-dom';
 
 export function Sidebar() {
     const { isSidebarOpen } = useSidebar();
     const [activeItem, setActiveItem] = useState('board');
     const navigate = useNavigate();
+    const location = useLocation();
+
+    useEffect(() => {
+        setActiveItem(location.pathname.replace('/', ''));
+    }, [location.pathname]);
 
     const menuItems = [
         { id: 'board', name: 'Board', icon: LayoutDashboard },
@@ -29,7 +35,6 @@ export function Sidebar() {
     ];
 
     const handleNavigate = (itemId: string) => {
-        setActiveItem(itemId);
         navigate(`/${itemId}`);
     };
 
